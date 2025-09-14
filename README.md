@@ -11,13 +11,17 @@ Database: Local MongoDB
 
 ## Backend setup
 cd backend. 
-npm install. 
+
+npm install.
+
 npm run dev. 
 
 # Backend will run at: http://localhost:5000.
 ## Frontend setup
 cd ../frontend. 
+
 npm install. 
+
 npm start. 
 
 # Frontend will run at: http://localhost:3000.
@@ -31,4 +35,5 @@ Password: Admin@123.
 Student Login.
 Email: student@example.com.
 Password: Student@123.
+
 
