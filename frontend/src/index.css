@@ -1,0 +1,179 @@
+/* Full-screen flexbox to center everything */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientShift 14s ease infinite;
+    color: #e0f7fa;
+    overflow: hidden;
+}
+
+/* Animate background gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating glowing circles */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.15);
+    filter: blur(40px);
+    animation: float 10s infinite ease-in-out alternate;
+    z-index: 0;
+}
+
+body::after {
+    width: 320px;
+    height: 320px;
+    right: 15%;
+    bottom: 15%;
+    background: rgba(0, 150, 255, 0.2);
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    from { transform: translateY(0px) translateX(0px); }
+    to { transform: translateY(-50px) translateX(40px); }
+}
+
+/* Center wrapper */
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Headings with gradient text */
+h1, h2, h3, h4 {
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    margin: 5px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 200, 255, 0.4);
+}
+
+button:hover {
+    transform: scale(1.07);
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    box-shadow: 0 6px 20px rgba(0,255,200,0.6);
+}
+
+/* Inputs */
+input, select, textarea {
+    margin: 8px 0;
+    padding: 10px;
+    width: min(100%, 260px);
+    border-radius: 8px;
+    border: 1px solid #00e5ff;
+    background: rgba(255,255,255,0.08);
+    color: #e0f7fa;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #38f9d7;
+    box-shadow: 0 0 10px rgba(56, 249, 215, 0.6);
+    outline: none;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+}
+
+/* Dashboard section */
+.dashboard-section {
+    background: rgba(0, 0, 0, 0.65);
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.4);
+    max-width: 850px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-align: left;
+    font-size: 14px;
+    color: #e0f7fa;
+}
+
+th {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 200, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    background: rgba(255,255,255,0.08);
+    color: #e0f7fa;
+}
